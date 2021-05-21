@@ -63,10 +63,12 @@ II.	En caso de no tener Python, hacer uso del archivo “recoutTest_tratado_2.ml
 Para poder realizar búsquedas, una vez se tenga la información indexada, se puede hacer uso del script proporcionado, o usar la UI de Solr.
 
 I. Búsqueda mediante scripts: para ello se debe ejecutar el script “tercer_script_consulta.ps1” seguido de varios parámetros:
+
 	a. Param 1: para elegir el browser donde se quiere visualizar la información. Habría varias posibilidades: msedge, chrome, firefox .
 	b. Param 2: nombre de la colección que se ha creado durante el proceso de configuración al levantar el servicio de Solr. Ejemplo: prueba_solr.
 	c. Param 3: palabra que queremos buscar en el sistema. (Ejemplo: rios).
 
 II. Mediante la UI de Solr: en este caso acceder a http://localhost:8983/solr/ y seleccionar la colección que se haya creado. Una vez se despliegan las diferentes opciones, escoger “Query”. En el nuevo espacio que aparece se pueden configurar diferentes parámetros, en este caso, para la realización de búsquedas bastaría con cambiar:
+
 	a. ‘q’: palabra:ríos #Este ejemplo serviría para buscar la palabra rios entre toda la información disponible. Para realizar cualquier búsqueda basta con añadir “palabra:----“ y añadir después de los dos puntos, la palabra deseada. 
 	b. ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
