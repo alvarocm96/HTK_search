@@ -1,5 +1,5 @@
 Los requerimientos para poder llevar a cabo las operaciones que se detallan en este documento son (elegir según formato de ejecución: docker o windows):
--	Para la ejecución mediante docker, es necesario tener descargado el mismo, más adelante se proporciona información para la instalación, y los archivos que se encuentran en este repositorio.
+-	Para la ejecución mediante docker, es necesario tener descargado el mismo (más adelante se proporciona información para la instalación) y los archivos que se encuentran en este repositorio.
 -	Para la ejecución en Windows, será necesario en primer lugar tener permisos de administrador en el sistema, descargar los archivos que se proporcionan en este repositorio, tener la PowerShell versión 5.1 (por defecto a partir de windows 8.1) y tener instalado java versión 8 o superior.
 -	Opcional: Python versión 3. 
 
