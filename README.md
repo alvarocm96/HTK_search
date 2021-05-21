@@ -10,7 +10,7 @@ Para levantar correctamente el servicio de indexación de Solr primero se debe t
 // Si no se dispone del programa seguir la guía de instalación proporcionada por la fuente oficial:
 https://docs.docker.com/get-started/ 
 
-Para poder indexar los datos se debe tener acceso a la información sobre la que se realizan las búsquedas, para ello clonando este proyecto, o descargando los archivos en un zip. Se debe descomprimir y en dicha carpeta descomprimida ejecutar los comandos que se indican en este tutorial. 
+Para poder indexar los datos se debe tener acceso a la información sobre la que se realizan las búsquedas, para ello clonando este proyecto, o descargando los archivos en un zip. Se debe descomprimir y en dicha carpeta descomprimida ejecutar los comandos que se indican en esta parte del tutorial. 
 
 La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “recouTest_tratado_2.csv”.
 
