@@ -19,7 +19,7 @@ La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “r
 # 2. Procedimiento para levantar Solr desde Docker
 En primer lugar, hay que descargarse la imagen oficial de Solr que se encuentra en Docker Hub:
 
-*docker pull solr:8.8.2
+*docker pull solr:8.8.2*
 
 // Que descarga la versión 8.8.2 de la imagen oficial de doker hub de Solr .
 
