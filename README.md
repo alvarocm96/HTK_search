@@ -18,16 +18,13 @@ La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “r
 
 # 2. Procedimiento para levantar Solr desde Docker
 En primer lugar, hay que descargarse la imagen oficial de Solr que se encuentra en Docker Hub:
-
 *docker pull solr:8.8.2*
 
-// Que descarga la versión 8.8.2 de la imagen oficial de doker hub de Solr .
-
-// Se podría comprobar si la imagen está correctamente descargada tanto desde la app docker desktop, como desde la línea de comandos con el comando : *docker images .
+// Que descarga la versión 8.8.2 de la imagen oficial de doker hub de Solr.
+// Se podría comprobar si la imagen está correctamente descargada tanto desde la app docker desktop, como desde la línea de comandos con el comando : *docker images* .
 
 Para crear un contenedor de la imagen de Solr:
-
-*docker run -dp 8983:8983 --name solr_busqueda solr:8.8.2 solr-precreate htk_search
+*docker run -dp 8983:8983 --name solr_busqueda solr:8.8.2 solr-precreate htk_search*
 
 // Ya se puede comprobar que Solr está escuchando en el puerto 8983 de la máquina anfitriona. http://localhost:8983/solr 
 // No haría falta realizar el docker pull, ya que al hacer el docker run y no encontrar la imagen, iría a buscarla al hub y haría la operación de pull automáticamente.
@@ -36,29 +33,29 @@ Para crear un contenedor de la imagen de Solr:
 Para el proceso de indexación se debe copiar el archivo que se va a usar para indexar los datos (hay que situarse en la carpeta que contiene el archivo .csv):
 
 // para pasar los archivos locales al contenedor
-*docker cp ./recoutTest_tratado_2.csv solr_busqueda:/opt/solr-8.8.2
+*docker cp ./recoutTest_tratado_2.csv solr_busqueda:/opt/solr-8.8.2*
 
 // para indexar el csv en el core creado de Solr
-*docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado_2.csv
+*docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado_2.csv*
 
-En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información. Para saber cómo se deben realizar dichas búsquedas leer el apartado 5.2 de la guía de Windows (Realizar búsquedas)
+En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información. Para saber cómo se deben realizar dichas búsquedas leer el apartado 5.2 de la guía de Windows (Realizar búsquedas).
 # ### WARNING  ### Se aconseja detener el contenedor cuando se haya finalizado el proceso de búsqueda para evitar el consumo de recursos de la máquina anfitriona. 
 
 // Para comprobar el id del contenedor solr_busqueda
-*docker ps
+*docker ps*
 
 // Para parar la ejecución del contenedor, dos opciones, mediante el id,  o el nombre
-*docker stop the-container-id
+*docker stop the-container-id*
 	
-*docker stop solr_busqueda
+*docker stop solr_busqueda*
 
 // Para eliminar el contenedor de Solr
-*docker rm the-container-id
-*docker rm solr_busqueda
+*docker rm the-container-id*
+*docker rm solr_busqueda*
 
 // Para eliminar la imagen de Solr, igual que antes, con el id o el nombre
-*docker rmi solr:8 
-*docker rmi the-image-id
+*docker rmi solr:8.8.2*
+*docker rmi the-image-id*
 
 ----
 
