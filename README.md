@@ -7,14 +7,14 @@ Los **requerimientos** para poder llevar a cabo las operaciones que se detallan 
 ## 1. Preparar entorno de trabajo
 Para levantar correctamente el servicio de indexación de Solr primero se debe tener como se comenta en los requisitos de este modo de ejecución del proyecto, el programa Docker instalado correctamente. 
 
-`Si no se dispone del programa seguir la guía de instalación proporcionada por la fuente oficial:
-https://docs.docker.com/get-started/`
+*Si no se dispone del programa seguir la guía de instalación proporcionada por la fuente oficial:
+https://docs.docker.com/get-started/*
 
 Para poder indexar los datos se debe tener acceso a la información sobre la que se realizan las búsquedas, para ello clonando este proyecto, o descargando los archivos en un zip. Se debe descomprimir y en dicha carpeta descomprimida ejecutar los comandos que se indican en esta parte del tutorial. 
 
 La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “recouTest_tratado_2.csv”.
 
-`También se podría usar el script de Python y el archivo “recouTest.mlf” para generar el archivo recoutTest_tratado.mlf y solamente sería necesario renombrar el archivo como csv (recoutTest_tratado.csv) para la indexación.` 
+*También se podría usar el script de Python y el archivo “recouTest.mlf” para generar el archivo recoutTest_tratado.mlf y solamente sería necesario renombrar el archivo como csv (recoutTest_tratado.csv) para la indexación.*
 
 ## 2. Procedimiento para levantar Solr desde Docker
 En primer lugar, hay que descargarse la imagen oficial de Solr que se encuentra en Docker Hub:
