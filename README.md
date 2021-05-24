@@ -37,44 +37,45 @@ No haría falta realizar el docker pull, ya que al hacer el docker run y no enco
 ## 3. Indexar información en Solr
 Para el proceso de indexación se debe copiar el archivo que se va a usar para indexar los datos (hay que situarse en la carpeta que contiene el archivo .csv):
 
-*// Para pasar los archivos locales al contenedor*
+Para pasar los archivos locales al contenedor:
 ````
 docker cp ./recoutTest_tratado_2.csv solr_busqueda:/opt/solr-8.8.2
 ````
 
-// Para indexar el csv en el core creado de Solr
+Para indexar el csv en el core creado de Solr:
 ````
 docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado_2.csv
 ````
 
 En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información. Para saber cómo se deben realizar dichas búsquedas leer el apartado 5.2 de la guía de Windows (Realizar búsquedas).
-__### WARNING  ###__ Se aconseja detener el contenedor cuando se haya finalizado el proceso de búsqueda para evitar el consumo de recursos de la máquina anfitriona. 
 
-*// Para comprobar el id del contenedor solr_busqueda*
+__### WARNING  ### Se aconseja detener el contenedor cuando se haya finalizado el proceso de búsqueda para evitar el consumo de recursos de la máquina anfitriona.__
+
+Para comprobar el id del contenedor solr_busqueda:
 ````
 docker ps
 ````
 
-*// Para parar la ejecución del contenedor, dos opciones, mediante el id,  o el nombre
+Para parar la ejecución del contenedor, dos opciones, mediante el id,  o el nombre:
 ````
 docker stop the-container-id
 	
 docker stop solr_busqueda
 ````
 
-*// Para eliminar el contenedor de Solr*
+Para eliminar el contenedor de Solr:
 ````
 docker rm the-container-id
 docker rm solr_busqueda
 ````
 
-*// Para eliminar la imagen de Solr, igual que antes, con el id o el nombre*
+Para eliminar la imagen de Solr, igual que antes, con el id o el nombre:
 ````
 docker rmi solr:8.8.2
 docker rmi the-image-id
 ````
 
-##----
+## ----
 
 # GUÍA WINDOWS
 
