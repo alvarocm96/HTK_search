@@ -24,7 +24,7 @@ docker pull solr:8.8.2
 - DUDA JAVI::: __> ¿¿¿ ES NECESARIO QUE EL DOCKER SEA DE MI PROPIO HUB, O PUEDO SIEMPRE CONFIAR EN QUE EL 8.8.2 VA A ESTAR SIEMPRE DISPONIBLE??? para ello me tendría que construir mi propio dockerfile y hacer un build. Podría indicar como se hace esto aquí también. 
 
 *// Que descarga la versión 8.8.2 de la imagen oficial de doker hub de Solr.
-Se podría comprobar si la imagen está correctamente descargada tanto desde la app docker desktop, como desde la línea de comandos con el comando : _docker images_ .*
+Se podría comprobar si la imagen está correctamente descargada tanto desde la app docker desktop, como desde la línea de comandos con el comando : "docker images" .*
 
 Para crear un contenedor de la imagen de Solr:
 ````
