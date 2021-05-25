@@ -47,6 +47,7 @@ Para indexar el csv en el core creado de Solr:
 docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado.csv
 ````
 
+## 5. Realizar búsquedas
 En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información.
 
 - Mediante la UI de Solr: en este caso acceder a http://localhost:8983/solr/ y seleccionar el núcleo que se haya creado. Una vez se despliegan las diferentes opciones, escoger “Query”. En el nuevo espacio que aparece se pueden configurar diferentes parámetros, en este caso, para la realización de búsquedas bastaría con cambiar:
@@ -71,12 +72,14 @@ docker stop solr_busqueda
 Para eliminar el contenedor de Solr:
 ````
 docker rm the-container-id
+
 docker rm solr_busqueda
 ````
 
 Para eliminar la imagen de Solr, igual que antes, con el id o el nombre:
 ````
 docker rmi solr:8.8.2
+
 docker rmi the-image-id
 ````
 
