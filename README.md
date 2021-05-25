@@ -1,6 +1,6 @@
 Los **requerimientos** para poder llevar a cabo las operaciones que se detallan en este documento son (elegir según formato de ejecución: docker o windows):
 1. Para la ejecución mediante docker, es necesario tener descargado el mismo (más adelante se proporciona información para la instalación) y los archivos que se encuentran en este repositorio.
-2. Para la ejecución en Windows, será necesario en primer lugar tener permisos de administrador en el sistema, descargar los archivos que se proporcionan en este repositorio, tener la PowerShell versión 5.1 (por defecto a partir de windows 8.1), tener instalado java versión 8 o superior, y descargar el .zip de la versión 8.8.2 de Solr de su página oficial: https://solr.apache.org/downloads.html 
+2. Para la ejecución en Windows, será necesario tener permisos de administrador, descargar los archivos de este repositorio y el zip de Solr, y tener instalada la PowerShell y  Java. En la segunda modalidad de este tutorial se profundiza sobre estos requerimientos.
 3. Opcional: Python versión 3. 
 
 # GUÍA DOCKER
@@ -88,6 +88,7 @@ docker rmi the-image-id
 # GUÍA WINDOWS
 
 ## 1. Preparar entorno de trabajo
+Para la ejecución en Windows, será necesario en primer lugar tener permisos de administrador en el sistema, descargar los archivos que se proporcionan en este repositorio, tener la PowerShell versión 5.1 (por defecto a partir de windows 8.1), tener instalado java versión 8 o superior, y descargar el .zip de la versión 8.8.2 de Solr de su página oficial: https://solr.apache.org/downloads.html
 Para levantar correctamente el servicio de indexación de Solr primero se debe habilitar la ejecución de scripts, que más tarde se recomendará volver a deshabilitar para evitar problemas de seguridad, ya que en caso de no habilitarlo se obtendría un mensaje de error. 
 Para poder ejecutar los scripts que contiene el proyecto y ayudan con la creación de un servicio que luego usaremos para hacer consultas, se proveen varios scripts:
 1. primer_script_levantar.ps1
