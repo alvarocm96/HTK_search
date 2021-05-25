@@ -97,7 +97,8 @@ En este punto ya se pueden lanzar los scripts *.ps1* contenidos en la carpeta de
 El primer script que se debe lanzar para levantar un servicio de Solr en el ordenador, se llama *primer_script_levantar.ps1*.
 Este script descomprime automáticamente el contenido de Solr, y ejecuta Solr en la línea de comandos para configurar el servicio. Para una correcta configuración, una vez se indique por pantalla que se ha entrado correctamente en el modo cloud, y para poder hacer uso de los scripts proporcionados se deben seguir los siguientes pasos:
 *// los pasos indicados crearán una colección por defecto que luego se usa para indexar contenido y realizar consultas* 
-Enter para el número de nodos, 2 por defecto.
+
+- Enter para el número de nodos, 2 por defecto.
 - Enter para el puerto del primer nodo, si queremos que esté en el 8983, que es el puerto designado por la IANA para Apache Solr.
 - Enter para el puerto del segundo nodo, si queremos que esté en el 7574, que es el puerto designado por la IANA para “Oracle Coherence Cluster Service”, registrado en 2014-07-09. 
 *// No habría problema en elegir puertos distintos para levantar el servidor con Solr, pero es necesaria la configuración por defecto indicada para poder hacer uso de los scripts.*
