@@ -21,7 +21,7 @@ En primer lugar, hay que descargarse la imagen oficial de Solr que se encuentra 
 ````
 docker pull solr:8.8.2
 ````
-- DUDA JAVI::: __> ¿¿¿ ES NECESARIO QUE EL DOCKER SEA DE MI PROPIO HUB, O PUEDO SIEMPRE CONFIAR EN QUE EL 8.8.2 VA A ESTAR SIEMPRE DISPONIBLE??? para ello me tendría que construir mi propio dockerfile y hacer un build. Podría indicar como se hace esto aquí también. 
+- DUDA ::: __> ¿¿¿ ES NECESARIO QUE EL DOCKER SEA DE MI PROPIO HUB, O PUEDO SIEMPRE CONFIAR EN QUE EL 8.8.2 VA A ESTAR SIEMPRE DISPONIBLE??? para ello me tendría que construir mi propio dockerfile y hacer un build. Podría indicar como se hace esto aquí también. 
 
 *// Que descarga la versión 8.8.2 de la imagen oficial de doker hub de Solr.
 Se podría comprobar si la imagen está correctamente descargada tanto desde la app docker desktop, como desde la línea de comandos con el comando : "docker images" .*
@@ -47,7 +47,7 @@ Para indexar el csv en el core creado de Solr:
 docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado.csv
 ````
 
-## 5. Realizar búsquedas
+## 4. Realizar búsquedas
 En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información.
 
 - Mediante la UI de Solr: en este caso acceder a http://localhost:8983/solr/ y seleccionar el núcleo que se haya creado. Una vez se despliegan las diferentes opciones, escoger “Query”. En el nuevo espacio que aparece se pueden configurar diferentes parámetros, en este caso, para la realización de búsquedas bastaría con cambiar:
