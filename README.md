@@ -47,7 +47,12 @@ Para indexar el csv en el core creado de Solr:
 docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado.csv
 ````
 
-En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información. Para saber cómo se deben realizar dichas búsquedas leer el apartado 5.2 de la guía de Windows (Realizar búsquedas).
+En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información.
+
+- Mediante la UI de Solr: en este caso acceder a http://localhost:8983/solr/ y seleccionar el núcleo que se haya creado. Una vez se despliegan las diferentes opciones, escoger “Query”. En el nuevo espacio que aparece se pueden configurar diferentes parámetros, en este caso, para la realización de búsquedas bastaría con cambiar:
+
+	- ‘q’: __palabra:ríos__ *//Este ejemplo serviría para buscar la palabra rios entre toda la información disponible. Para realizar cualquier búsqueda basta con añadir “palabra:----“ y añadir después de los dos puntos, la palabra deseada.*
+	- ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
 
 __### WARNING  ### Se aconseja detener el contenedor cuando se haya finalizado el proceso de búsqueda para evitar el consumo de recursos de la máquina anfitriona.__
 
