@@ -7,12 +7,12 @@ Los **requerimientos** para poder llevar a cabo las operaciones que se detallan 
 ## 1. Preparar entorno de trabajo
 Para levantar correctamente el servicio de indexación de Solr primero se debe tener como se comenta en los requisitos de este modo de ejecución del proyecto, el programa Docker instalado correctamente. 
 
-*// Si no se dispone del programa seguir la guía de instalación proporcionada por la fuente oficial:
+*// Si no se dispone del programa, en el siguiente link que lleva al tutorial de la página oficial se pueden encontrar varios link para la instalación según el sistema operativo de la máquina, y una guía de instalación y manejo de la herramienta realizada sobre un ejemplo:
 https://docs.docker.com/get-started/*
 
 Para poder indexar los datos se debe tener acceso a la información sobre la que se realizan las búsquedas, para ello clonando este proyecto, o descargando los archivos en un zip. Se debe descomprimir y en dicha carpeta descomprimida ejecutar los comandos que se indican en esta parte del tutorial. 
 
-La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “recouTest_tratado_2.csv”.
+La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “recouTest_tratado.csv”.
 
 *// También se podría usar el script de Python y el archivo “recouTest.mlf” para generar el archivo recoutTest_tratado.mlf y solamente sería necesario renombrar el archivo como csv (recoutTest_tratado.csv) para la indexación.*
 
@@ -39,12 +39,12 @@ Para el proceso de indexación se debe copiar el archivo que se va a usar para i
 
 Para pasar los archivos locales al contenedor:
 ````
-docker cp ./recoutTest_tratado_2.csv solr_busqueda:/opt/solr-8.8.2
+docker cp ./recoutTest_tratado.csv solr_busqueda:/opt/solr-8.8.2
 ````
 
 Para indexar el csv en el core creado de Solr:
 ````
-docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado_2.csv
+docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado.csv
 ````
 
 En este punto la información ya está correctamente indexada y se pueden hacer búsquedas sobre la información. Para saber cómo se deben realizar dichas búsquedas leer el apartado 5.2 de la guía de Windows (Realizar búsquedas).
