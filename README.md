@@ -54,11 +54,11 @@ En este punto la información ya está correctamente indexada y se pueden hacer 
 	- ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
 
 *// A continuación se incluyen algunos ejemplos de las búsquedas que se pueden realizar de la información indexada:*
-*- "palabra:rios": el resultado obtenido son 474 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- "palabra:Aneto": el resultado obtenido son 10 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- "palabra:Ebro": el resultado obtenido son 96 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- "palabra:Cantabrico": el resultado obtenido son 66 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- "palabra:Asturias": el resultado obtenido son 30 coincidencias de esta palabra clave sobre el conjunto de datos*
+	- *"palabra:rios": el resultado obtenido son 474 coincidencias de esta palabra clave sobre el conjunto de datos*
+	- *"palabra:Aneto": el resultado obtenido son 10 coincidencias de esta palabra clave sobre el conjunto de datos*
+	- *"palabra:Ebro": el resultado obtenido son 96 coincidencias de esta palabra clave sobre el conjunto de datos*
+	- *"palabra:Cantabrico": el resultado obtenido son 66 coincidencias de esta palabra clave sobre el conjunto de datos*
+	- *"palabra:Asturias": el resultado obtenido son 30 coincidencias de esta palabra clave sobre el conjunto de datos*
 
 
 __### WARNING  ### Se aconseja detener el contenedor cuando se haya finalizado el proceso de búsqueda para evitar el consumo de recursos de la máquina anfitriona.__
