@@ -170,7 +170,7 @@ Para poder realizar búsquedas, una vez se tenga la información indexada, se pu
 - Mediante la UI de Solr: en este caso acceder a http://localhost:8983/solr/ y seleccionar la colección que se haya creado. Una vez se despliegan las diferentes opciones, escoger “Query”. En el nuevo espacio que aparece se pueden configurar diferentes parámetros, en este caso, para la realización de búsquedas bastaría con cambiar:
 
 	- ‘q’: __palabra:ríos__ *//Este ejemplo serviría para buscar la palabra rios entre toda la información disponible. Para realizar cualquier búsqueda basta con añadir “palabra:----“ y añadir después de los dos puntos, la palabra deseada.*
-	- - ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
+	- ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
 
 *// A continuación se incluyen algunos ejemplos de las búsquedas que se pueden realizar de la información indexada desde la línea de comandos:*
 
