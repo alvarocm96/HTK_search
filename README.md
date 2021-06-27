@@ -12,17 +12,15 @@ https://docs.docker.com/get-started/*
 
 Para poder indexar los datos se debe tener acceso a la información sobre la que se realizan las búsquedas, para ello clonando este proyecto, o descargando los archivos en un zip. Se debe descomprimir y en dicha carpeta descomprimida ejecutar los comandos que se indican en esta parte del tutorial. 
 
-La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “recouTest_tratado.csv”.
+La carpeta contendrá diferentes archivos, pero solo es necesario el uso de “recouTest_tratado_2.csv”.
 
-*// También se podría usar el script de Python y el archivo “recouTest.mlf” para generar el archivo recoutTest_tratado.mlf y solamente sería necesario renombrar el archivo como csv (recoutTest_tratado.csv) para la indexación.*
+*// También se podría usar el script de Python y el archivo “recoutTest.mlf” para generar el archivo recoutTest_tratado_2.mlf y solamente sería necesario renombrar el archivo como csv (recoutTest_tratado_2.csv) para la indexación.*
 
 ## 2. Procedimiento para levantar Solr desde Docker
 En primer lugar, hay que descargarse la imagen oficial de Solr que se encuentra en Docker Hub:
 ````
 docker pull solr:8.8.2
 ````
-- DUDA ::: __> ¿¿¿ ES NECESARIO QUE EL DOCKER SEA DE MI PROPIO HUB, O PUEDO SIEMPRE CONFIAR EN QUE EL 8.8.2 VA A ESTAR SIEMPRE DISPONIBLE??? para ello me tendría que construir mi propio dockerfile y hacer un build. Podría indicar como se hace esto aquí también. 
-
 *// Que descarga la versión 8.8.2 de la imagen oficial de doker hub de Solr.
 Se podría comprobar si la imagen está correctamente descargada tanto desde la app docker desktop, como desde la línea de comandos con el comando : "docker images" .*
 
@@ -39,12 +37,12 @@ Para el proceso de indexación se debe copiar el archivo que se va a usar para i
 
 Para pasar los archivos locales al contenedor:
 ````
-docker cp ./recoutTest_tratado.csv solr_busqueda:/opt/solr-8.8.2
+docker cp ./recoutTest_tratado_2.csv solr_busqueda:/opt/solr-8.8.2
 ````
 
 Para indexar el csv en el core creado de Solr:
 ````
-docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado.csv
+docker exec -it solr_busqueda post -c htk_search ./recoutTest_tratado_2.csv
 ````
 
 ## 4. Realizar búsquedas
@@ -54,6 +52,14 @@ En este punto la información ya está correctamente indexada y se pueden hacer 
 
 	- ‘q’: __palabra:ríos__ *//Este ejemplo serviría para buscar la palabra rios entre toda la información disponible. Para realizar cualquier búsqueda basta con añadir “palabra:----“ y añadir después de los dos puntos, la palabra deseada.*
 	- ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
+
+*// A continuación se incluyen algunos ejemplos de las búsquedas que se pueden realizar de la información indexada:*
+*- "palabra:rios": el resultado obtenido son 474 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- "palabra:Aneto": el resultado obtenido son 10 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- "palabra:Ebro": el resultado obtenido son 96 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- "palabra:Cantabrico": el resultado obtenido son 66 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- "palabra:Asturias": el resultado obtenido son 30 coincidencias de esta palabra clave sobre el conjunto de datos*
+
 
 __### WARNING  ### Se aconseja detener el contenedor cuando se haya finalizado el proceso de búsqueda para evitar el consumo de recursos de la máquina anfitriona.__
 
@@ -95,7 +101,7 @@ Para poder ejecutar los scripts que contiene el proyecto y ayudan con la creaci�
 2. segundo_script_recuperar.ps1
 3. tercer_script_consulta.ps1
 
-Para permitir la ejecución de estos scripts,  se debe seleccionar la directiva *RemoteSigned* , ya que por defecto el sistema la establece como *Restricted*. Para ello se debe buscar la PowerShell y ejecutar como administrador. Una vez dentro, se debe ejecutar el siguiente comando para cambiar la directiva por defecto que se comenta con anterioridad:
+Para permitir la ejecución de estos scripts,  se debe seleccionar la directiva *RemoteSigned* o *Unrestricted* , ya que por defecto el sistema la establece como *Restricted*. Para ello se debe buscar la PowerShell y ejecutar como administrador. Una vez dentro, se debe ejecutar el siguiente comando para cambiar la directiva por defecto que se comenta con anterioridad:
 ````
 Set-ExecutionPolicy RemoteSigned
 ````
@@ -143,9 +149,9 @@ Para ello, partiendo del punto anterior donde se ha seleccionado la colección a
 En este nuevo espacio, para indexar el contenido proporcionado, se debe cambiar, el “Document Type” y se debe seleccionar “csv”. En el apartado “Document(s) se debe copiar y pegar toda la información del fichero que queramos indexar en el sistema, en el formato proporcionado.  
 *// Para que Solr entienda la información que se introduce en el sistema, y para facilitar la visualización de información y realización de búsquedas sobre la misma, se procede a un tratado de la información:*
 
-- Si se tiene Python instalado, se puede hacer uso del script de Python. Para ello se debe simplemente ejecutar el script proporcionado “script_tratado_información.py”. (Dado que se proporciona dicho archivo, para comprobar su correcto funcionamiento, se recomienda borrar el .csv tratado proporcionado en este repositorio)
+- Si se tiene Python instalado, se puede hacer uso del script de Python, aunque se recomienda el uso del archivo final proporcionado en este repositorio. Para ello se debe simplemente ejecutar el script proporcionado “script_tratado_información.py”. (Dado que se proporciona dicho archivo, para comprobar su correcto funcionamiento, se recomienda borrar el .csv tratado proporcionado en este repositorio)
 
-- En caso de no tener Python, hacer uso del archivo *recoutTest_tratado.mlf* que contiene la información ya tratada y lista para ser indexada. 
+- En caso de no tener Python, hacer uso del archivo *recoutTest_tratado_2.mlf* que contiene la información ya tratada y lista para ser indexada. 
 
 ## 5. Realizar búsquedas
 Para poder realizar búsquedas, una vez se tenga la información indexada, se puede hacer uso del script proporcionado, o usar la UI de Solr.
@@ -159,4 +165,12 @@ Para poder realizar búsquedas, una vez se tenga la información indexada, se pu
 - Mediante la UI de Solr: en este caso acceder a http://localhost:8983/solr/ y seleccionar la colección que se haya creado. Una vez se despliegan las diferentes opciones, escoger “Query”. En el nuevo espacio que aparece se pueden configurar diferentes parámetros, en este caso, para la realización de búsquedas bastaría con cambiar:
 
 	- ‘q’: __palabra:ríos__ *//Este ejemplo serviría para buscar la palabra rios entre toda la información disponible. Para realizar cualquier búsqueda basta con añadir “palabra:----“ y añadir después de los dos puntos, la palabra deseada.*
-	- ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
+	- - ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
+
+*// A continuación se incluyen algunos ejemplos de las búsquedas que se pueden realizar de la información indexada desde la línea de comandos:*
+*- ".\tercer_script_consulta.ps1 firefox HTK_search rios": el resultado obtenido son 474 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- ".\tercer_script_consulta.ps1 chrome HTK_search Aneto": el resultado obtenido son 10 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- ".\tercer_script_consulta.ps1 msedge HTK_search Ebro": el resultado obtenido son 96 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- ".\tercer_script_consulta.ps1 chrome HTK_search Cantabrico": el resultado obtenido son 66 coincidencias de esta palabra clave sobre el conjunto de datos*
+*- " .\tercer_script_consulta.ps1 chrome HTK_search Asturias": el resultado obtenido son 30 coincidencias de esta palabra clave sobre el conjunto de datos*
+	
