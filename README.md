@@ -168,9 +168,14 @@ Para poder realizar búsquedas, una vez se tenga la información indexada, se pu
 	- - ‘rows’: por defecto viene configurado con 10, pero se podría elegir un número mayor de visualizaciones. (se ha probado hasta 100.000).
 
 *// A continuación se incluyen algunos ejemplos de las búsquedas que se pueden realizar de la información indexada desde la línea de comandos:*
-*- ".\tercer_script_consulta.ps1 firefox HTK_search rios": el resultado obtenido son 474 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- ".\tercer_script_consulta.ps1 chrome HTK_search Aneto": el resultado obtenido son 10 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- ".\tercer_script_consulta.ps1 msedge HTK_search Ebro": el resultado obtenido son 96 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- ".\tercer_script_consulta.ps1 chrome HTK_search Cantabrico": el resultado obtenido son 66 coincidencias de esta palabra clave sobre el conjunto de datos*
-*- " .\tercer_script_consulta.ps1 chrome HTK_search Asturias": el resultado obtenido son 30 coincidencias de esta palabra clave sobre el conjunto de datos*
+
+- *".\tercer_script_consulta.ps1 firefox HTK_search rios": el resultado obtenido son 474 coincidencias de esta palabra clave sobre el conjunto de datos*
+
+- *".\tercer_script_consulta.ps1 chrome HTK_search Aneto": el resultado obtenido son 10 coincidencias de esta palabra clave sobre el conjunto de datos*
+
+- *".\tercer_script_consulta.ps1 msedge HTK_search Ebro": el resultado obtenido son 96 coincidencias de esta palabra clave sobre el conjunto de datos*
+
+- *".\tercer_script_consulta.ps1 chrome HTK_search Cantabrico": el resultado obtenido son 66 coincidencias de esta palabra clave sobre el conjunto de datos*
+
+- *" .\tercer_script_consulta.ps1 chrome HTK_search Asturias": el resultado obtenido son 30 coincidencias de esta palabra clave sobre el conjunto de datos*
 	
